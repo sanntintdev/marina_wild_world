@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
+        />
+        <meta name="author" content="Your Name" />
+        <title>Marina Wild World - An Immersive Wildlife Experience</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="../css/output.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/main.js" defer></script>
+        <script src="../js/animations.js" defer></script>
+    </head>
+    <body class="bg-[#F2E5BF] overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-[#257180] bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-[#FD8B51] rounded-full"></div>
+                        <span class="text-2xl font-bold text-white">Marina Wild World</span>
+                    </a>
+
+                    <div class="hidden md:flex space-x-8">
+                        <a
+                            href="index.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="animals.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Animals</a
+                        >
+                        <a
+                            href="visit.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Visit</a
+                        >
+                        <a
+                            href="experiences.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Experiences</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <!-- Hero Background -->
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="/public/asset/index/Boy-Feeding-Animal.jpg"
+                    alt="boy-feeding-animal-daytime"
+                />
+                <div class="absolute inset-0 bg-[#257180] bg-opacity-50"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in">
+                    EXPLORE THE WILD
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8 animate-fade-in-delay">
+                    Discover the extraordinary world of wildlife
+                </p>
+                <a
+                    href="tickets.html"
+                    class="inline-block px-8 py-4 bg-[#FD8B51] text-white rounded-lg hover:bg-[#CB6040] transition-colors duration-300 transform hover:scale-105"
+                >
+                    Book Your Adventure
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Exhibits -->
+        <section class="max-w-7xl mx-auto px-4 py-24">
+            <!-- Section Header -->
+            <div class="mb-16 relative">
+                <h2 class="text-5xl font-bold text-[#257180] mb-4">Featured Exhibits</h2>
+                <p class="text-xl text-[#257180]/70 max-w-2xl">
+                    Embark on a journey through our most spectacular habitats and meet our
+                    extraordinary residents
+                </p>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Large Featured Card -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <div
+                        class="exhibit-card group relative h-[600px] rounded-3xl overflow-hidden cursor-pointer"
+                    >
+                        <!-- Background Image -->
+                        <div
+                            class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                        >
+                            <img
+                                src="/public/asset/index/African-Savanna.jpg"
+                                alt="African Savanna"
+                                class="w-full h-full object-cover"
+                            />
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent to-[#257180]/70"
+                            ></div>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                            <!-- Tag -->
+                            <span
+                                class="inline-block px-4 py-2 bg-[#FD8B51] text-white rounded-full text-sm font-medium mb-4 w-fit"
+                            >
+                                Featured Habitat
+                            </span>
+
+                            <!-- Title -->
+                            <h3
+                                class="text-4xl font-bold text-white mb-4 transform group-hover:-translate-y-2 transition-transform duration-300"
+                            >
+                                African Savanna
+                            </h3>
+
+                            <!-- Description -->
+                            <p
+                                class="text-white/90 mb-6 max-w-xl transform group-hover:-translate-y-2 transition-transform duration-300 delay-75"
+                            >
+                                Experience the majesty of Africa's most iconic species in our
+                                expansive savanna habitat. Meet our lion pride, zebra herds, and
+                                towering giraffes.
+                            </p>
+
+                            <!-- Interactive Elements -->
+                            <div
+                                class="flex items-center space-x-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-100"
+                            >
+                                <div class="flex items-center space-x-2 text-white/90">
+                                    <i data-lucide="bell"></i>
+                                    <span>Daily Shows</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-white/90">
+                                    <i data-lucide="user"></i>
+                                    <span>6+ Species</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Hover Button -->
+                        <div
+                            class="absolute top-10 right-10 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            <button
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-4 transition-colors duration-300"
+                            >
+                                <i data-lucide="move-right" class="font-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Exhibit Card -->
+                <div
+                    class="exhibit-card group relative h-[600px] rounded-3xl overflow-hidden cursor-pointer"
+                >
+                    <!-- Background Image -->
+                    <div
+                        class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    >
+                        <img
+                            src="/public/asset/index/Tropical-RainForest.jpg"
+                            alt="Tropical Rainforest"
+                            class="w-full h-full object-cover"
+                        />
+                        <!-- Gradient Overlay -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-transparent to-[#257180]/90"
+                        ></div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <span
+                            class="inline-block px-4 py-2 bg-[#CB6040] text-white rounded-full text-sm font-medium mb-4 w-fit"
+                        >
+                            New Exhibit
+                        </span>
+
+                        <h3
+                            class="text-3xl font-bold text-white mb-4 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            Tropical Rainforest
+                        </h3>
+
+                        <p
+                            class="text-white/90 mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-75"
+                        >
+                            Journey through our misty rainforest where colorful birds soar and
+                            primates swing from tree to tree.
+                        </p>
+
+                        <!-- Interactive Elements -->
+                        <div
+                            class="flex items-center space-x-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-100"
+                        >
+                            <div class="flex items-center space-x-2 text-white/90">
+                                <i data-lucide="bell"></i>
+                                <span>Guided Tours</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Hover Button -->
+                        <div
+                            class="absolute top-10 right-10 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            <button
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-4 transition-colors duration-300"
+                            >
+                                <i data-lucide="move-right" class="font-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Exhibit Card -->
+                <div
+                    class="exhibit-card group relative h-[600px] rounded-3xl overflow-hidden cursor-pointer"
+                >
+                    <!-- Background Image -->
+                    <div
+                        class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                    >
+                        <img
+                            src="/public/asset/index/Big-cat.jpg"
+                            alt="Lion in the wild"
+                            class="w-full h-full object-cover"
+                        />
+                        <!-- Gradient Overlay -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-transparent to-[#257180]/90"
+                        ></div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <span
+                            class="inline-block px-4 py-2 bg-[#CB6040] text-white rounded-full text-sm font-medium mb-4 w-fit"
+                        >
+                            New Exhibit
+                        </span>
+
+                        <h3
+                            class="text-3xl font-bold text-white mb-4 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            Big Cats of the World
+                        </h3>
+
+                        <p
+                            class="text-white/90 mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-75"
+                        >
+                            Get up close with the planet’s most magnificent predators, including
+                            lions, tigers, and leopards. Learn about their habitats, behaviors, and
+                            the challenges they face in the wild, as well as the conservation
+                            efforts to preserve these incredible animals.
+                        </p>
+
+                        <!-- Interactive Elements -->
+                        <div
+                            class="flex items-center space-x-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-100"
+                        >
+                            <div class="flex items-center space-x-2 text-white/90">
+                                <i data-lucide="bell"></i>
+                                <span>Guided Tours</span>
+                            </div>
+                        </div>
+                        <!-- Interactive Hover Button -->
+                        <div
+                            class="absolute top-10 right-10 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            <button
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-4 transition-colors duration-300"
+                            >
+                                <i data-lucide="move-right" class="font-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Large Featured Card -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <div
+                        class="exhibit-card group relative h-[600px] rounded-3xl overflow-hidden cursor-pointer"
+                    >
+                        <!-- Background Image -->
+                        <div
+                            class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                        >
+                            <img
+                                src="/public/asset/index/Polar-Bear.jpg"
+                                alt="Arctic Wilderness"
+                                class="w-full h-full object-cover"
+                            />
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent to-[#257180]/70"
+                            ></div>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                            <!-- Tag -->
+                            <span
+                                class="inline-block px-4 py-2 bg-[#FD8B51] text-white rounded-full text-sm font-medium mb-4 w-fit"
+                            >
+                                Featured Habitat
+                            </span>
+
+                            <!-- Title -->
+                            <h3
+                                class="text-4xl font-bold text-white mb-4 transform group-hover:-translate-y-2 transition-transform duration-300"
+                            >
+                                Arctic Wilderness
+                            </h3>
+
+                            <!-- Description -->
+                            <p
+                                class="text-white/90 mb-6 max-w-xl transform group-hover:-translate-y-2 transition-transform duration-300 delay-75"
+                            >
+                                Experience the chill of the Arctic and meet the animals adapted to
+                                one of the harshest environments on Earth. This exhibit showcases
+                                polar bears, arctic foxes, and penguins, and provides insights into
+                                the impact of climate change on their habitats.
+                            </p>
+
+                            <!-- Interactive Elements -->
+                            <div
+                                class="flex items-center space-x-6 transform group-hover:-translate-y-2 transition-transform duration-300 delay-100"
+                            >
+                                <div class="flex items-center space-x-2 text-white/90">
+                                    <i data-lucide="bell"></i>
+                                    <span>Daily Shows</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-white/90">
+                                    <i data-lucide="user"></i>
+                                    <span>6+ Species</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Hover Button -->
+                        <div
+                            class="absolute top-10 right-10 transform group-hover:-translate-y-2 transition-transform duration-300"
+                        >
+                            <button
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-4 transition-colors duration-300"
+                            >
+                                <i data-lucide="move-right" class="font-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates Section -->
+        <section class="bg-[#CB6040] py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-5xl font-bold text-white mb-4">Latest Updates</h2>
+                    <p class="text-white/80 text-xl">
+                        Stay informed about our newest arrivals and events
+                    </p>
+                </div>
+
+                <!-- Updates Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Update Card 1 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#FD8B51] text-white text-sm font-medium rounded-full"
+                            >
+                                New Arrival
+                            </span>
+                            <span class="text-white/80 text-sm">2 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Welcome Our New Lion Cubs!
+                        </h3>
+                        <p class="text-white/80 mb-4">
+                            Our lion pride has grown! Meet our three new cubs, born last week to our
+                            resident lioness, Luna.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            Read More
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Update Card 2 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#257180] text-white text-sm font-medium rounded-full"
+                            >
+                                Event
+                            </span>
+                            <span class="text-white/80 text-sm">5 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Night Safari Experience</h3>
+                        <p class="text-white/80 mb-4">
+                            Join us for a magical evening tour and discover how our nocturnal
+                            animals come alive after dark.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            Learn More
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Update Card 3 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#257180] text-white text-sm font-medium rounded-full"
+                            >
+                                News
+                            </span>
+                            <span class="text-white/80 text-sm">1 week ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Conservation Milestone</h3>
+                        <p class="text-white/80 mb-4">
+                            Our breeding program has successfully helped increase the population of
+                            endangered species.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            Read More
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Update Card 4 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#FD8B51] text-white text-sm font-medium rounded-full"
+                            >
+                                Special
+                            </span>
+                            <span class="text-white/80 text-sm">1 week ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Holiday Season Special</h3>
+                        <p class="text-white/80 mb-4">
+                            Enjoy special family packages and extended hours during the upcoming
+                            holiday season.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            View Details
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Update Card 5 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#257180] text-white text-sm font-medium rounded-full"
+                            >
+                                Event
+                            </span>
+                            <span class="text-white/80 text-sm">2 weeks ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Feeding Sessions</h3>
+                        <p class="text-white/80 mb-4">
+                            New feeding schedule announced! Watch our animals during their meal
+                            times.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            See Schedule
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Update Card 6 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 bg-[#FD8B51] text-white text-sm font-medium rounded-full"
+                            >
+                                News
+                            </span>
+                            <span class="text-white/80 text-sm">2 weeks ago</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">New Facilities Opening</h3>
+                        <p class="text-white/80 mb-4">
+                            Exciting new facilities including a children's discovery zone opening
+                            next month.
+                        </p>
+                        <a
+                            href="#"
+                            class="text-white hover:text-[#FD8B51] inline-flex items-center gap-2 transition-colors"
+                        >
+                            Learn More
+                            <i data-lucide="move-right" class="font-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Preview -->
+        <section class="bg-[#F2E5BF] py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-5xl font-bold text-[#257180] mb-4">Plan Your Visit</h2>
+                    <p class="text-[#257180]/80 text-xl">
+                        Everything you need to know for an amazing zoo experience
+                    </p>
+                </div>
+
+                <!-- Info Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Opening Hours -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-[#257180] rounded-full flex items-center justify-center"
+                            >
+                                <i data-lucide="clock" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#257180]">Opening Hours</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>9:00 - 18:00</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Weekends</span>
+                                <span>8:00 - 20:00</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Holidays</span>
+                                <span>8:00 - 20:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Ticket Prices -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-[#FD8B51] rounded-full flex items-center justify-center"
+                            >
+                                <i data-lucide="ticket" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#257180]">Ticket Prices</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex justify-between">
+                                <span>Adults</span>
+                                <span>$25</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Children (3-12)</span>
+                                <span>$15</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Seniors</span>
+                                <span>$20</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Getting Here -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-[#CB6040] rounded-full flex items-center justify-center"
+                            >
+                                <i data-lucide="map pin" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#257180]">Getting Here</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">123 Zoo Avenue, Wildlife City</p>
+                        <ul class="space-y-1 text-gray-600">
+                            <li>• Bus: Routes 10, 15, 20</li>
+                            <li>• Train: Wildlife Station</li>
+                            <li>• Free Parking Available</li>
+                        </ul>
+                    </div>
+
+                    <!-- Main Attractions -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-[#257180] rounded-full flex items-center justify-center"
+                            >
+                                <i data-lucide="sparkles" class="text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#257180]">Highlights</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• African Savanna</li>
+                            <li>• Rainforest Adventure</li>
+                            <li>• Penguin Paradise</li>
+                            <li>• Kids Discovery Zone</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#257180] text-white">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Column -->
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">Marina Wild World</h4>
+                        <p class="text-white/80 mb-6">
+                            Connecting people with wildlife through education, conservation, and
+                            unforgettable experiences.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Animal Exhibits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Opening Hours</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Ticket Prices</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Zoo Map</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Events</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Visit Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-map-pin"></i>
+                                <span>80 Mandai Lake Road, 729826</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-mail"></i>
+                                <span>info@Marina Wild World.com</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-clock"></i>
+                                <span>Open Daily: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Stay Updated</h4>
+                        <p class="text-white/80 mb-4">
+                            Subscribe to our newsletter for updates and special offers.
+                        </p>
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full px-4 py-2 bg-[#FD8B51] hover:bg-[#CB6040] transition-colors rounded-lg font-medium flex items-center justify-center gap-2"
+                            >
+                                <i class="icon-send"></i>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-white/60 text-sm">
+                            © 2024 Marina Wild World. All rights reserved.
+                        </div>
+                        <div class="flex gap-6 text-sm">
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Privacy Policy</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Terms of Service</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Cookie Policy</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>
