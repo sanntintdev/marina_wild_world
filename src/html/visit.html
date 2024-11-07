@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
+        />
+        <meta name="author" content="Sann Tint Aung" />
+        <title>Marina Wild World - An Immersive Wildlife Experience</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="../css/output.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/main.js" defer></script>
+    </head>
+    <body class="bg-[#F2E5BF] overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-[#257180] bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center space-x-3">
+                        <span class="text-2xl font-bold text-white">Marina Wild World</span>
+                    </a>
+
+                    <div class="hidden md:flex space-x-8">
+                        <a
+                            href="home.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="animals.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Animals</a
+                        >
+                        <a
+                            href="visit.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Visit</a
+                        >
+                        <a
+                            href="experiences.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Experiences</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
+                            <i data-lucide="align-right"></i>
+                        </button>
+                    </div>
+
+                    <nav
+                        id="mobileNav"
+                        class="md:hidden fixed inset-x-0 top-0 -translate-y-full transition-transform duration-300 bg-[#257180] shadow-lg z-50"
+                    >
+                        <div class="container mx-auto px-4 py-6">
+                            <!-- Close button -->
+                            <div class="flex justify-end mb-6">
+                                <button id="closeMenuBtn" class="text-white hover:text-[#FD8B51]">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+
+                            <ul class="space-y-4">
+                                <li>
+                                    <a
+                                        href="home.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="animals.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="paw-print" class="w-5 h-5"></i>
+                                        Animals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="visit.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="experiences.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                        Experiences
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div
+                        id="menuOverlay"
+                        class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+                    ></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Quick Info Cards -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="header mt-24 mb-4 px-2 py-4">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#257180] mb-4">
+                    Plan Your Perfect Day at Our Zoo
+                </h1>
+                <p class="text-[#257180]/90 text-lg md:text-xl mb-8 max-w-2xl">
+                    Whether you're planning a family day out, a school trip, or a unique date, we've
+                    got everything you need to make your visit memorable. Discover our amazing
+                    animals, enjoy our facilities, and create unforgettable memories with us.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Today's Hours -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="clock" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Today's Hours</h3>
+                    </div>
+                    <div class="text-[#F2E5BF]/90">
+                        <p class="text-2xl font-bold mb-2">9:00 AM - 6:00 PM</p>
+                        <p class="text-sm">Last entry at 5:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Weather -->
+                <div
+                    class="bg-[#CB6040] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="sun" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Weather Today</h3>
+                    </div>
+                    <div class="text-[#F2E5BF]/90">
+                        <p class="text-2xl font-bold mb-2">75°F Sunny</p>
+                        <p class="text-sm">Perfect day for a visit!</p>
+                    </div>
+                </div>
+
+                <!-- Current Status -->
+                <div
+                    class="bg-[#FD8B51] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Current Status</h3>
+                    </div>
+                    <div class="text-[#F2E5BF]/90">
+                        <p class="text-2xl font-bold mb-2">Open Now</p>
+                        <p class="text-sm">All exhibits available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ticket Pricing & Hours -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Ticket Pricing -->
+                <div class="lg:col-span-8 bg-[#257180] rounded-lg p-8 shadow-lg">
+                    <h2 class="text-3xl font-bold text-[#F2E5BF] mb-6">Admission Tickets</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Adult Ticket -->
+                        <div class="bg-[#F2E5BF]/10 rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Adult (13+)</h3>
+                            <p class="text-3xl font-bold text-[#FD8B51] mb-4">$24.99</p>
+                            <ul class="text-[#F2E5BF]/90 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    All-day access to exhibits
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    Live shows included
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Child Ticket -->
+                        <div class="bg-[#F2E5BF]/10 rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Child (3-12)</h3>
+                            <p class="text-3xl font-bold text-[#FD8B51] mb-4">$19.99</p>
+                            <ul class="text-[#F2E5BF]/90 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    All-day access to exhibits
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    Kid's activities included
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Senior Ticket -->
+                        <div class="bg-[#F2E5BF]/10 rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Senior (65+)</h3>
+                            <p class="text-3xl font-bold text-[#FD8B51] mb-4">$21.99</p>
+                            <ul class="text-[#F2E5BF]/90 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    All-day access to exhibits
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    Guided tour options
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Group Ticket -->
+                        <div class="bg-[#F2E5BF]/10 rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Group (10+)</h3>
+                            <p class="text-3xl font-bold text-[#FD8B51] mb-4">$19.99</p>
+                            <ul class="text-[#F2E5BF]/90 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    Per person pricing
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4"></i>
+                                    Group coordinator included
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opening Hours -->
+                <div class="lg:col-span-4 bg-[#CB6040] rounded-lg p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-[#F2E5BF] mb-6">Opening Hours</h2>
+                    <div class="space-y-4">
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-[#F2E5BF]/20"
+                        >
+                            <span class="text-[#F2E5BF] font-medium">Monday - Thursday</span>
+                            <span class="text-[#F2E5BF]">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-[#F2E5BF]/20"
+                        >
+                            <span class="text-[#F2E5BF] font-medium">Friday - Saturday</span>
+                            <span class="text-[#F2E5BF]">9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-2 border-b border-[#F2E5BF]/20"
+                        >
+                            <span class="text-[#F2E5BF] font-medium">Sunday</span>
+                            <span class="text-[#F2E5BF]">10:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="mt-6 p-4 bg-[#F2E5BF]/10 rounded-lg">
+                            <h3 class="text-[#F2E5BF] font-bold mb-2">Holiday Hours</h3>
+                            <p class="text-[#F2E5BF]/90 text-sm">
+                                Special hours may apply during holidays. Please check our calendar
+                                for details.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities Grid -->
+        <section class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold text-[#257180] mb-8">Facilities & Amenities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Dining -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="utensils" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Dining Options</h3>
+                    </div>
+                    <ul class="text-[#F2E5BF]/90 space-y-2">
+                        <li>Safari Café</li>
+                        <li>Jungle Food Court</li>
+                        <li>Ice Cream Stand</li>
+                        <li>Picnic Areas</li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Guest Services</h3>
+                    </div>
+                    <ul class="text-[#F2E5BF]/90 space-y-2">
+                        <li>Information Kiosks</li>
+                        <li>First Aid Station</li>
+                        <li>Stroller Rentals</li>
+                        <li>Lockers</li>
+                    </ul>
+                </div>
+
+                <!-- Accessibility -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg group hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="wheelchair" class="w-8 h-8 text-[#F2E5BF]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Accessibility</h3>
+                    </div>
+                    <ul class="text-[#F2E5BF]/90 space-y-2">
+                        <li>Wheelchair Access</li>
+                        <li>Rest Areas</li>
+                        <li>Family Restrooms</li>
+                        <li>Sensory Guides</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines & Rules -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="bg-[#CB6040] rounded-lg p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-[#F2E5BF] mb-6">Visitor Guidelines</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-[#F2E5BF]/10 rounded-lg p-4">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="camera" class="w-6 h-6 text-[#F2E5BF]"></i>
+                            <h3 class="font-bold text-[#F2E5BF]">Photography</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            Photos allowed, no flash photography near animals.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#F2E5BF]/10 rounded-lg p-4">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="ban" class="w-6 h-6 text-[#F2E5BF]"></i>
+                            <h3 class="font-bold text-[#F2E5BF]">Prohibited Items</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            No outside food, pets, or balloons allowed.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#F2E5BF]/10 rounded-lg p-4">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i data-lucide="heart" class="w-6 h-6 text-[#F2E5BF]"></i>
+                            <h3 class="font-bold text-[#F2E5BF]">Animal Welfare</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            Do not feed or touch animals unless permitted.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#257180] text-white">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Column -->
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">Marina Wild World</h4>
+                        <p class="text-white/80 mb-6">
+                            Connecting people with wildlife through education, conservation, and
+                            unforgettable experiences.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Animal Exhibits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Opening Hours</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Ticket Prices</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Zoo Map</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Events</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Visit Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-map-pin"></i>
+                                <span>80 Mandai Lake Road, 729826</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-mail"></i>
+                                <span>info@Marina Wild World.com</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-clock"></i>
+                                <span>Open Daily: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Stay Updated</h4>
+                        <p class="text-white/80 mb-4">
+                            Subscribe to our newsletter for updates and special offers.
+                        </p>
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full px-4 py-2 bg-[#FD8B51] hover:bg-[#CB6040] transition-colors rounded-lg font-medium flex items-center justify-center gap-2"
+                            >
+                                <i class="icon-send"></i>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-white/60 text-sm">
+                            © 2024 Marina Wild World. All rights reserved.
+                        </div>
+                        <div class="flex gap-6 text-sm">
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Privacy Policy</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Terms of Service</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Cookie Policy</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>

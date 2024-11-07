@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
+        />
+        <meta name="author" content="Sann Tint Aung" />
+        <title>Marina Wild World - An Immersive Wildlife Experience</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="../css/output.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/main.js" defer></script>
+    </head>
+    <body class="bg-[#F2E5BF] overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-[#257180] bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center space-x-3">
+                        <span class="text-2xl font-bold text-white">Marina Wild World</span>
+                    </a>
+
+                    <div class="hidden md:flex space-x-8">
+                        <a
+                            href="home.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="animals.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Animals</a
+                        >
+                        <a
+                            href="visit.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Visit</a
+                        >
+                        <a
+                            href="experiences.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Experiences</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
+                            <i data-lucide="align-right"></i>
+                        </button>
+                    </div>
+
+                    <nav
+                        id="mobileNav"
+                        class="md:hidden fixed inset-x-0 top-0 -translate-y-full transition-transform duration-300 bg-[#257180] shadow-lg z-50"
+                    >
+                        <div class="container mx-auto px-4 py-6">
+                            <!-- Close button -->
+                            <div class="flex justify-end mb-6">
+                                <button id="closeMenuBtn" class="text-white hover:text-[#FD8B51]">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+
+                            <ul class="space-y-4">
+                                <li>
+                                    <a
+                                        href="home.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="animals.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="paw-print" class="w-5 h-5"></i>
+                                        Animals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="visit.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="experiences.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                        Experiences
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div
+                        id="menuOverlay"
+                        class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+                    ></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Featured Experience -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="header mt-24 mb-4 px-2 py-4">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#257180] mb-4">
+                    Unforgettable Zoo Experiences
+                </h1>
+                <p class="text-[#257180]/90 text-lg md:text-xl mb-8 max-w-2xl">
+                    Get closer to wildlife with our range of immersive experiences. From feeding
+                    sessions to behind-the-scenes tours, create memories that will last a lifetime.
+                </p>
+            </div>
+            <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="relative">
+                        <img
+                            src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2002/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/yahpbdmfs1dmkbrjoizp/NightSafariSingaporeTicketswithTramRide-Klook.jpg"
+                            alt="Night Safari"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-[#FD8B51] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Featured Experience
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold text-[#F2E5BF] mb-4">
+                            Night Safari Adventure
+                        </h2>
+                        <p class="text-[#F2E5BF]/90 mb-6">
+                            Experience the zoo in a whole new light. Discover how our nocturnal
+                            animals come alive after dark, led by our expert guides through
+                            specially lit trails.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="clock" class="w-5 h-5 text-[#FD8B51]"></i>
+                                    <span class="text-[#F2E5BF] font-medium">Duration</span>
+                                </div>
+                                <p class="text-[#F2E5BF]/90">2 Hours</p>
+                            </div>
+                            <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="users" class="w-5 h-5 text-[#FD8B51]"></i>
+                                    <span class="text-[#F2E5BF] font-medium">Group Size</span>
+                                </div>
+                                <p class="text-[#F2E5BF]/90">Max 15 People</p>
+                            </div>
+                        </div>
+                        <button
+                            class="bg-[#FD8B51] text-[#F2E5BF] px-8 py-3 rounded-lg hover:bg-[#CB6040] transition-colors inline-flex items-center gap-2 self-start"
+                        >
+                            Book Now
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Grid -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- VIP Tour -->
+                <div class="bg-[#CB6040] rounded-lg overflow-hidden shadow-lg group">
+                    <div class="relative">
+                        <img
+                            src="https://images.luxuryescapes.com/q_auto:good/84ub7ldxcjrbpf9ugz4"
+                            alt="VIP Tour"
+                            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                        ></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-[#F2E5BF] mb-2">
+                                VIP Behind-the-Scenes Tour
+                            </h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Exclusive access to keeper areas and animal encounters
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feeding Experience -->
+                <div class="bg-[#FD8B51] rounded-lg overflow-hidden shadow-lg group">
+                    <div class="relative">
+                        <img
+                            src="https://www.mandai.com/content/dam/mandai/singapore-zoo/things-to-do/animal-feeding-elephant-listing-900x600.jpg"
+                            alt="Feeding Experience"
+                            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                        ></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-[#F2E5BF] mb-2">
+                                Animal Feeding Experience
+                            </h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Help our keepers feed your favorite animals
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="bg-[#257180] rounded-lg p-8 shadow-lg">
+                <h2 class="text-3xl font-bold text-[#F2E5BF] mb-8">Daily Shows & Activities</h2>
+                <div class="space-y-6">
+                    <!-- Morning -->
+                    <div class="relative pl-8 pb-6 border-l-2 border-[#FD8B51]">
+                        <div
+                            class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-[#FD8B51]"
+                        ></div>
+                        <time class="text-[#F2E5BF]/70 text-sm">10:30 AM</time>
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mt-1">Penguin Feeding</h3>
+                        <p class="text-[#F2E5BF]/90">Watch our penguins enjoy their morning meal</p>
+                    </div>
+
+                    <div class="relative pl-8 pb-6 border-l-2 border-[#FD8B51]">
+                        <div
+                            class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-[#FD8B51]"
+                        ></div>
+                        <time class="text-[#F2E5BF]/70 text-sm">11:30 AM</time>
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mt-1">Bird Show</h3>
+                        <p class="text-[#F2E5BF]/90">
+                            Amazing aerial displays from our birds of prey
+                        </p>
+                    </div>
+
+                    <!-- Afternoon -->
+                    <div class="relative pl-8 pb-6 border-l-2 border-[#FD8B51]">
+                        <div
+                            class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-[#FD8B51]"
+                        ></div>
+                        <time class="text-[#F2E5BF]/70 text-sm">2:00 PM</time>
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mt-1">Lion Feeding</h3>
+                        <p class="text-[#F2E5BF]/90">Witness the power of our big cats</p>
+                    </div>
+
+                    <div class="relative pl-8 pb-6 border-l-2 border-[#FD8B51]">
+                        <div
+                            class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-[#FD8B51]"
+                        ></div>
+                        <time class="text-[#F2E5BF]/70 text-sm">3:30 PM</time>
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mt-1">Elephant Walk</h3>
+                        <p class="text-[#F2E5BF]/90">Learn about these gentle giants</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div
+                            class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-[#FD8B51]"
+                        ></div>
+                        <time class="text-[#F2E5BF]/70 text-sm">4:30 PM</time>
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mt-1">Keeper Talk</h3>
+                        <p class="text-[#F2E5BF]/90">Daily educational session with our experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Shows Grid -->
+        <section class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold text-[#257180] mb-8">Special Experiences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Animal Photography -->
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-lg group">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="camera" class="w-8 h-8 text-[#FD8B51]"></i>
+                            <h3 class="text-xl font-bold text-[#F2E5BF]">Wildlife Photography</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 mb-4">
+                            Perfect your wildlife photography skills with our expert photographers.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[#F2E5BF]/70">3 hours</span>
+                            <button class="text-[#FD8B51] hover:text-[#F2E5BF] transition-colors">
+                                Learn More →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keeper for a Day -->
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-lg group">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="id-card" class="w-8 h-8 text-[#FD8B51]"></i>
+                            <h3 class="text-xl font-bold text-[#F2E5BF]">Keeper for a Day</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 mb-4">
+                            Experience a day in the life of our dedicated animal keepers.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[#F2E5BF]/70">Full day</span>
+                            <button class="text-[#FD8B51] hover:text-[#F2E5BF] transition-colors">
+                                Learn More →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Workshop -->
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-lg group">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-[#FD8B51]"></i>
+                            <h3 class="text-xl font-bold text-[#F2E5BF]">Wildlife Workshop</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 mb-4">
+                            Interactive learning sessions about conservation and wildlife.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[#F2E5BF]/70">2 hours</span>
+                            <button class="text-[#FD8B51] hover:text-[#F2E5BF] transition-colors">
+                                Learn More →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="bg-[#257180] rounded-lg p-8 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#F2E5BF] mb-4">
+                            Ready for Your Adventure?
+                        </h2>
+                        <p class="text-[#F2E5BF]/90 mb-6">
+                            Book your experience now and create memories that will last a lifetime.
+                            Group discounts available.
+                        </p>
+                        <button
+                            class="bg-[#FD8B51] text-[#F2E5BF] px-8 py-3 rounded-lg hover:bg-[#CB6040] transition-colors inline-flex items-center gap-2"
+                        >
+                            Book Experience
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                            <div class="text-[#FD8B51] text-2xl font-bold mb-1">10+</div>
+                            <div class="text-[#F2E5BF]">Unique Experiences</div>
+                        </div>
+                        <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                            <div class="text-[#FD8B51] text-2xl font-bold mb-1">5k+</div>
+                            <div class="text-[#F2E5BF]">Happy Visitors</div>
+                        </div>
+                        <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                            <div class="text-[#FD8B51] text-2xl font-bold mb-1">15+</div>
+                            <div class="text-[#F2E5BF]">Expert Guides</div>
+                        </div>
+                        <div class="bg-[#F2E5BF]/10 p-4 rounded-lg">
+                            <div class="text-[#FD8B51] text-2xl font-bold mb-1">100%</div>
+                            <div class="text-[#F2E5BF]">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#257180] text-white">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Column -->
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">Marina Wild World</h4>
+                        <p class="text-white/80 mb-6">
+                            Connecting people with wildlife through education, conservation, and
+                            unforgettable experiences.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Animal Exhibits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Opening Hours</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Ticket Prices</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Zoo Map</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Events</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Visit Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-map-pin"></i>
+                                <span>80 Mandai Lake Road, 729826</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-mail"></i>
+                                <span>info@Marina Wild World.com</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-clock"></i>
+                                <span>Open Daily: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Stay Updated</h4>
+                        <p class="text-white/80 mb-4">
+                            Subscribe to our newsletter for updates and special offers.
+                        </p>
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full px-4 py-2 bg-[#FD8B51] hover:bg-[#CB6040] transition-colors rounded-lg font-medium flex items-center justify-center gap-2"
+                            >
+                                <i class="icon-send"></i>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-white/60 text-sm">
+                            © 2024 Marina Wild World. All rights reserved.
+                        </div>
+                        <div class="flex gap-6 text-sm">
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Privacy Policy</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Terms of Service</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Cookie Policy</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>

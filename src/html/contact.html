@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
+        />
+        <meta name="author" content="Sann Tint Aung" />
+        <title>Marina Wild World - An Immersive Wildlife Experience</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="../css/output.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/main.js" defer></script>
+    </head>
+    <body class="bg-[#F2E5BF] overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-[#257180] bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center space-x-3">
+                        <span class="text-2xl font-bold text-white">Marina Wild World</span>
+                    </a>
+
+                    <div class="hidden md:flex space-x-8">
+                        <a
+                            href="home.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="animals.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Animals</a
+                        >
+                        <a
+                            href="visit.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Visit</a
+                        >
+                        <a
+                            href="experiences.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Experiences</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
+                            <i data-lucide="align-right"></i>
+                        </button>
+                    </div>
+
+                    <nav
+                        id="mobileNav"
+                        class="md:hidden fixed inset-x-0 top-0 -translate-y-full transition-transform duration-300 bg-[#257180] shadow-lg z-50"
+                    >
+                        <div class="container mx-auto px-4 py-6">
+                            <!-- Close button -->
+                            <div class="flex justify-end mb-6">
+                                <button id="closeMenuBtn" class="text-white hover:text-[#FD8B51]">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+
+                            <ul class="space-y-4">
+                                <li>
+                                    <a
+                                        href="home.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="animals.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="paw-print" class="w-5 h-5"></i>
+                                        Animals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="visit.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="experiences.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                        Experiences
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div
+                        id="menuOverlay"
+                        class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+                    ></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Quick Contact Cards -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="header mt-24 mb-4 px-2 py-4">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#257180] mb-4">
+                    Get in Touch
+                </h1>
+                <p class="text-[#257180]/90 text-lg md:text-xl mb-8 max-w-2xl">
+                    Have questions? We're here to help! Reach out to us through any of our contact
+                    channels or visit us during business hours.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- General Contact -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="phone" class="w-8 h-8 text-[#FD8B51]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Call Us</h3>
+                    </div>
+                    <p class="text-[#F2E5BF]/90 mb-2">Main Office:</p>
+                    <a
+                        href="tel:+1234567890"
+                        class="text-[#F2E5BF] text-xl font-bold hover:text-[#FD8B51] transition-colors"
+                    >
+                        +1 234 567 890
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-[#FD8B51]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Email Us</h3>
+                    </div>
+                    <p class="text-[#F2E5BF]/90 mb-2">General Inquiries:</p>
+                    <a
+                        href="mailto:info@zooweb.com"
+                        class="text-[#F2E5BF] font-bold hover:text-[#FD8B51] transition-colors break-all"
+                    >
+                        info@Marina Wild World.com
+                    </a>
+                </div>
+
+                <!-- Location -->
+                <div
+                    class="bg-[#257180] rounded-lg p-6 shadow-lg hover:scale-[1.02] transition-all"
+                >
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-[#FD8B51]"></i>
+                        <h3 class="text-xl font-bold text-[#F2E5BF]">Visit Us</h3>
+                    </div>
+                    <p class="text-[#F2E5BF]/90 mb-2">Our Address:</p>
+                    <address class="text-[#F2E5BF] not-italic">
+                        80 Mandai Lake Road<br />
+                        Singapore 729826
+                    </address>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- Form -->
+                <div class="lg:col-span-3 bg-[#257180] rounded-lg p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-[#F2E5BF] mb-6">Send Us a Message</h2>
+                    <form class="space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-[#F2E5BF] mb-2">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                class="w-full px-4 py-2 rounded-lg bg-[#F2E5BF]/10 border border-[#F2E5BF]/20 text-[#F2E5BF] focus:outline-none focus:border-[#FD8B51] transition-colors"
+                                placeholder="John Doe"
+                            />
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-[#F2E5BF] mb-2"
+                                >Email Address</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                class="w-full px-4 py-2 rounded-lg bg-[#F2E5BF]/10 border border-[#F2E5BF]/20 text-[#F2E5BF] focus:outline-none focus:border-[#FD8B51] transition-colors"
+                                placeholder="john@example.com"
+                            />
+                        </div>
+
+                        <!-- Subject -->
+                        <div>
+                            <label for="subject" class="block text-[#F2E5BF] mb-2">Subject</label>
+                            <select
+                                id="subject"
+                                class="w-full px-4 py-2 rounded-lg bg-[#F2E5BF]/10 border border-[#F2E5BF]/20 text-[#F2E5BF] focus:outline-none focus:border-[#FD8B51] transition-colors"
+                            >
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="tickets">Ticket Information</option>
+                                <option value="group">Group Visits</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-[#F2E5BF] mb-2">Message</label>
+                            <textarea
+                                id="message"
+                                rows="4"
+                                class="w-full px-4 py-2 rounded-lg bg-[#F2E5BF]/10 border border-[#F2E5BF]/20 text-[#F2E5BF] focus:outline-none focus:border-[#FD8B51] transition-colors resize-none"
+                                placeholder="Your message here..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            class="bg-[#FD8B51] text-[#F2E5BF] px-8 py-3 rounded-lg hover:bg-[#CB6040] transition-colors"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-[#CB6040] rounded-lg p-6 shadow-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="siren" class="w-8 h-8 text-[#F2E5BF]"></i>
+                            <h3 class="text-xl font-bold text-[#F2E5BF]">Emergency Contact</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 mb-4">
+                            For immediate assistance or emergencies during your visit:
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="phone-call" class="w-5 h-5 text-[#F2E5BF]"></i>
+                                <span class="text-[#F2E5BF] font-bold"
+                                    >Emergency: (123) 999-9999</span
+                                >
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="first-aid-kit" class="w-5 h-5 text-[#F2E5BF]"></i>
+                                <span class="text-[#F2E5BF]"
+                                    >First Aid Stations at Entrance & Central Plaza</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mb-4">Business Hours</h3>
+                        <div class="space-y-3 text-[#F2E5BF]/90">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="bg-[#257180] rounded-lg p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-[#F2E5BF] mb-6">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item -->
+                    <div class="border-b border-[#F2E5BF]/20 pb-4">
+                        <button
+                            class="w-full flex justify-between items-center text-left FAQ_button"
+                        >
+                            <span class="text-[#F2E5BF] font-medium"
+                                >What are your opening hours?</span
+                            >
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-[#F2E5BF]"></i>
+                        </button>
+                        <div class="mt-2 text-[#F2E5BF]/90">
+                            We are open daily from 9:00 AM to 5:00 PM, with last entry at 4:00 PM.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item -->
+                    <div class="border-b border-[#F2E5BF]/20 pb-4">
+                        <button
+                            class="w-full flex justify-between items-center text-left FAQ_button"
+                        >
+                            <span class="text-[#F2E5BF] font-medium"
+                                >Do you offer group discounts?</span
+                            >
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-[#F2E5BF]"></i>
+                        </button>
+                        <div class="mt-2 text-[#F2E5BF]/90">
+                            Yes, we offer special rates for groups of 10 or more. Please contact our
+                            group sales department.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item -->
+                    <div class="border-b border-[#F2E5BF]/20 pb-4">
+                        <button
+                            class="w-full flex justify-between items-center text-left FAQ_button"
+                        >
+                            <span class="text-[#F2E5BF] font-medium">Is parking available?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-[#F2E5BF]"></i>
+                        </button>
+                        <div class="mt-2 text-[#F2E5BF]/90">
+                            Yes, we have free parking available for all visitors.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#257180] text-white">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Column -->
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">Marina Wild World</h4>
+                        <p class="text-white/80 mb-6">
+                            Connecting people with wildlife through education, conservation, and
+                            unforgettable experiences.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Animal Exhibits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Opening Hours</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Ticket Prices</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Zoo Map</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Events</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Visit Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-map-pin"></i>
+                                <span>80 Mandai Lake Road, 729826</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-mail"></i>
+                                <span>info@Marina Wild World.com</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-clock"></i>
+                                <span>Open Daily: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Stay Updated</h4>
+                        <p class="text-white/80 mb-4">
+                            Subscribe to our newsletter for updates and special offers.
+                        </p>
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full px-4 py-2 bg-[#FD8B51] hover:bg-[#CB6040] transition-colors rounded-lg font-medium flex items-center justify-center gap-2"
+                            >
+                                <i class="icon-send"></i>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-white/60 text-sm">
+                            © 2024 Marina Wild World. All rights reserved.
+                        </div>
+                        <div class="flex gap-6 text-sm">
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Privacy Policy</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Terms of Service</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Cookie Policy</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+
+            // FAQ Accordion functionality
+            document.querySelectorAll('.FAQ_button').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    content.classList.toggle('hidden');
+                    const icon = button.querySelector('i');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        </script>
+    </body>
+</html>

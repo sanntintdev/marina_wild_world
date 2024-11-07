@@ -7,7 +7,7 @@
             name="description"
             content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
         />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="Sann Tint Aung" />
         <title>Marina Wild World - An Immersive Wildlife Experience</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,6 @@
         <!-- Scripts -->
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="../js/main.js" defer></script>
-        <script src="../js/animations.js" defer></script>
     </head>
     <body class="bg-[#F2E5BF] overflow-x-hidden">
         <!-- Navigation -->
@@ -32,14 +31,13 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-24">
                     <!-- Logo -->
-                    <a href="index.html" class="flex items-center space-x-3">
-                        <div class="w-12 h-12 bg-[#FD8B51] rounded-full"></div>
+                    <a href="home.html" class="flex items-center space-x-3">
                         <span class="text-2xl font-bold text-white">Marina Wild World</span>
                     </a>
 
                     <div class="hidden md:flex space-x-8">
                         <a
-                            href="index.html"
+                            href="home.html"
                             class="text-white hover:text-[#FD8B51] transition-colors duration-300"
                             >Home</a
                         >
@@ -68,21 +66,75 @@
                     <!-- Mobile Menu Button -->
                     <div class="md:hidden">
                         <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
-                            <svg
-                                class="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4 6h16M4 12h16m-7 6h7"
-                                />
-                            </svg>
+                            <i data-lucide="align-right"></i>
                         </button>
                     </div>
+
+                    <nav
+                        id="mobileNav"
+                        class="md:hidden fixed inset-x-0 top-0 -translate-y-full transition-transform duration-300 bg-[#257180] shadow-lg z-50"
+                    >
+                        <div class="container mx-auto px-4 py-6">
+                            <!-- Close button -->
+                            <div class="flex justify-end mb-6">
+                                <button id="closeMenuBtn" class="text-white hover:text-[#FD8B51]">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+
+                            <ul class="space-y-4">
+                                <li>
+                                    <a
+                                        href="home.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="animals.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="paw-print" class="w-5 h-5"></i>
+                                        Animals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="visit.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="experiences.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                        Experiences
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div
+                        id="menuOverlay"
+                        class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+                    ></div>
                 </div>
             </div>
         </nav>
@@ -92,7 +144,8 @@
             <!-- Hero Background -->
             <div class="absolute inset-0 z-0">
                 <img
-                    src="/public/asset/index/Boy-Feeding-Animal.jpg"
+                    class="w-full h-full object-cover object-center md:object-[center_40%] scale-100 md:scale-105 transition-transform duration-300"
+                    src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="boy-feeding-animal-daytime"
                 />
                 <div class="absolute inset-0 bg-[#257180] bg-opacity-50"></div>
@@ -138,7 +191,7 @@
                             class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
                         >
                             <img
-                                src="/public/asset/index/African-Savanna.jpg"
+                                src="https://images.unsplash.com/photo-1623745493581-2f7b3d0d2140?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="African Savanna"
                                 class="w-full h-full object-cover"
                             />
@@ -210,7 +263,7 @@
                         class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
                     >
                         <img
-                            src="/public/asset/index/Tropical-RainForest.jpg"
+                            src="https://images.unsplash.com/photo-1718434020275-804381f4aba0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Tropical Rainforest"
                             class="w-full h-full object-cover"
                         />
@@ -273,7 +326,7 @@
                         class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
                     >
                         <img
-                            src="/public/asset/index/Big-cat.jpg"
+                            src="https://images.unsplash.com/photo-1562080411-a1afc4016a64?q=80&w=2823&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Lion in the wild"
                             class="w-full h-full object-cover"
                         />
@@ -338,7 +391,7 @@
                             class="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
                         >
                             <img
-                                src="/public/asset/index/Polar-Bear.jpg"
+                                src="https://images.unsplash.com/photo-1470211702316-05678b58d67a?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Arctic Wilderness"
                                 class="w-full h-full object-cover"
                             />
@@ -629,16 +682,20 @@
                         </div>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex justify-between">
-                                <span>Adults</span>
-                                <span>$25</span>
+                                <span>Adults (13+)</span>
+                                <span>$24.99</span>
                             </li>
                             <li class="flex justify-between">
                                 <span>Children (3-12)</span>
-                                <span>$15</span>
+                                <span>$19.99</span>
                             </li>
                             <li class="flex justify-between">
-                                <span>Seniors</span>
-                                <span>$20</span>
+                                <span>Seniors (65+)</span>
+                                <span>$21.99</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Group (10+)</span>
+                                <span>$19.99</span>
                             </li>
                         </ul>
                     </div>
@@ -653,9 +710,9 @@
                             </div>
                             <h3 class="text-xl font-bold text-[#257180]">Getting Here</h3>
                         </div>
-                        <p class="text-gray-600 mb-2">123 Zoo Avenue, Wildlife City</p>
+                        <p class="text-gray-600 mb-2">180 Mandai Lake Road, 729826</p>
                         <ul class="space-y-1 text-gray-600">
-                            <li>• Bus: Routes 10, 15, 20</li>
+                            <li>• Bus: Routes 927, 138</li>
                             <li>• Train: Wildlife Station</li>
                             <li>• Free Parking Available</li>
                         </ul>

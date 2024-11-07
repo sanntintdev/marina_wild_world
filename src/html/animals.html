@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Explore the wild at our immersive zoo experience. Meet exotic animals and join exciting adventures."
+        />
+        <meta name="author" content="Sann Tint Aung" />
+        <title>Marina Wild World - An Immersive Wildlife Experience</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="../css/output.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/main.js" defer></script>
+        <script src="../js/animals.js" defer></script>
+        <script src="../js/animations.js" defer></script>
+    </head>
+    <body class="bg-[#F2E5BF] overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-[#257180] bg-opacity-95 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center space-x-3">
+                        <span class="text-2xl font-bold text-white">Marina Wild World</span>
+                    </a>
+
+                    <div class="hidden md:flex space-x-8">
+                        <a
+                            href="home.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="animals.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Animals</a
+                        >
+                        <a
+                            href="visit.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Visit</a
+                        >
+                        <a
+                            href="experiences.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Experiences</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white hover:text-[#FD8B51]">
+                            <i data-lucide="align-right"></i>
+                        </button>
+                    </div>
+
+                    <nav
+                        id="mobileNav"
+                        class="md:hidden fixed inset-x-0 top-0 -translate-y-full transition-transform duration-300 bg-[#257180] shadow-lg z-50"
+                    >
+                        <div class="container mx-auto px-4 py-6">
+                            <!-- Close button -->
+                            <div class="flex justify-end mb-6">
+                                <button id="closeMenuBtn" class="text-white hover:text-[#FD8B51]">
+                                    <i data-lucide="x"></i>
+                                </button>
+                            </div>
+
+                            <ul class="space-y-4">
+                                <li>
+                                    <a
+                                        href="home.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="animals.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="paw-print" class="w-5 h-5"></i>
+                                        Animals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="visit.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                        Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="experiences.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                        Experiences
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="contact.html"
+                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                    >
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div
+                        id="menuOverlay"
+                        class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+                    ></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Bento Grid Animal Cards -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="header mt-24 mb-4 px-2 py-4">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#257180] mb-4">
+                    Discover Our Wildlife
+                </h1>
+                <p class="text-[#257180]/90 text-lg md:text-xl mb-8 max-w-2xl">
+                    From majestic big cats to playful penguins, meet our incredible family of
+                    animals. Each species has a unique story of survival and adaptation.
+                </p>
+            </div>
+            <!-- First Row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Large Featured Card -->
+                <div class="lg:col-span-2 bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1707760189490-2746ed6b88ba?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Lion"
+                            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Endangered
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#F2E5BF] mb-2">African Lions</h3>
+                        <p class="text-[#F2E5BF]/90 mb-4">
+                            Meet our pride of African lions, including our majestic male Zeus and
+                            his family. These apex predators are a sight to behold during feeding
+                            times.
+                        </p>
+                        <button
+                            class="bg-[#CB6040] text-[#F2E5BF] px-4 py-2 rounded-lg hover:bg-[#FD8B51] transition-colors"
+                        >
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Regular Card -->
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1689797216026-73ba7f66bcf0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Elephant"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Vulnerable
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Asian Elephants</h3>
+                        <p class="text-[#F2E5BF]/90">
+                            Our elephant sanctuary houses a family of gentle giants.
+                        </p>
+                        <button
+                            class="mt-12 bg-[#CB6040] text-[#F2E5BF] px-4 py-2 rounded-lg hover:bg-[#FD8B51] transition-colors"
+                        >
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secind Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1545906786-f1276396255d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tigers"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Endangered
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Red Panda</h3>
+                        <p class="text-[#F2E5BF]/90">
+                            Watch the adorable Red Panda in action! With its fluffy tail and
+                            mischievous eyes, this small forest dweller is a favorite for kids and
+                            adults alike.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1555722654-1548cb0a8edf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tigers"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Endangered
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Sumatran Tigers</h3>
+                        <p class="text-[#F2E5BF]/90">
+                            Our magnificent tigers demonstrate their natural behaviors in a spacious
+                            habitat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                    <div class="relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1630509930321-3e6e66c6cb04?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tigers"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 right-4">
+                            <span
+                                class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                            >
+                                Endangered
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Bornean Orangutan</h3>
+                        <p class="text-[#F2E5BF]/90">
+                            Meet these playful, curious apes who swing through the trees! Get
+                            inspired by their survival story and discover what you can do to help
+                            preserve their jungle homes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hiddenContent" class="hidden transition-all duration-500 ease-in-out">
+                <!-- Hidden Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1690670025059-1405260f7333?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Penguins"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Valurable
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Malayan Tapir</h3>
+                            <p class="text-[#F2E5BF]/90">
+                                With its distinct black and white coloring, the Malayan Tapir is a
+                                fascinating forest dweller. Catch a glimpse of this unique animal
+                                and learn how it helps keep rainforests thriving.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1590691563977-97e10916647b?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Tigers"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Valurable
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Komodo Dragon</h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Meet the ultimate island predator! Our Komodo Dragon is a living
+                                relic of the prehistoric world, and here’s your chance to see this
+                                powerful creature up close.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1636011371935-bb36b26be0b8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Tigers"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Endangered
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">White Rhinoceros</h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Behold the strength of the White Rhino, a true giant of the African
+                                plains. Discover the inspiring story of its survival amidst threats
+                                in the wild.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1690667858350-7ac457754906?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Penguins"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Protected
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Proboscis Monkey</h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Come laugh with the quirky, long-nosed Proboscis Monkey! Native to
+                                Borneo, this fascinating primate is known for its playful nature and
+                                amusing expressions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1647726559449-582806c10710?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Tigers"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Endangered
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">
+                                Sumatran Orangutan
+                            </h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Meet one of the last wild men of the jungle! This intelligent and
+                                gentle great ape is battling habitat loss, and you can see its
+                                amazing abilities up close in our Rainforest Habitat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#257180] rounded-lg overflow-hidden shadow-xl group">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1551415923-a2297c7fda79?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Penguins"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-[#CB6040] text-[#F2E5BF] px-4 py-1 rounded-full text-sm font-medium"
+                                >
+                                    Protected
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#F2E5BF] mb-2">Emperor Penguins</h3>
+                            <p class="text-[#F2E5BF]/90">
+                                Watch our colony of penguins in their climate-controlled habitat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- See More/Less Button -->
+            <div class="flex justify-center mt-8">
+                <button
+                    id="toggleButton"
+                    onclick="toggleContent()"
+                    class="bg-[#257180] text-[#F2E5BF] px-8 py-3 rounded-lg hover:bg-[#CB6040] transition-colors duration-300 flex items-center gap-2"
+                >
+                    <span id="buttonText">See More</span>
+                    <i
+                        id="buttonIcon"
+                        data-lucide="chevron-down"
+                        class="w-5 h-5 transition-transform duration-300"
+                    ></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Conservation Status -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="bg-[#257180] rounded-lg p-6 shadow-lg">
+                <h2 class="text-2xl font-bold text-[#F2E5BF] mb-6">Conservation Status Guide</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#CB6040] p-4 rounded-lg">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-3 h-3 rounded-full bg-[#FD8B51]"></span>
+                            <h3 class="font-bold text-[#F2E5BF]">Critically Endangered</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            Facing an extremely high risk of extinction in the wild.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#CB6040] p-4 rounded-lg">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-3 h-3 rounded-full bg-[#FD8B51]"></span>
+                            <h3 class="font-bold text-[#F2E5BF]">Endangered</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            Facing a very high risk of extinction in the wild.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#CB6040] p-4 rounded-lg">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-3 h-3 rounded-full bg-[#FD8B51]"></span>
+                            <h3 class="font-bold text-[#F2E5BF]">Vulnerable</h3>
+                        </div>
+                        <p class="text-[#F2E5BF]/90 text-sm">
+                            Facing a high risk of extinction in the wild.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#257180] text-white">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- About Column -->
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6">Marina Wild World</h4>
+                        <p class="text-white/80 mb-6">
+                            Connecting people with wildlife through education, conservation, and
+                            unforgettable experiences.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                            >
+                                <i data-lucide="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Animal Exhibits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Opening Hours</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Ticket Prices</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Zoo Map</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-white/80 hover:text-[#FD8B51] transition-colors"
+                                    >Events</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visit Us -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Visit Us</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-map-pin"></i>
+                                <span>80 Mandai Lake Road, 729826</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-mail"></i>
+                                <span>info@Marina Wild World.com</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-white/80">
+                                <i class="icon-clock"></i>
+                                <span>Open Daily: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Stay Updated</h4>
+                        <p class="text-white/80 mb-4">
+                            Subscribe to our newsletter for updates and special offers.
+                        </p>
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Your email address"
+                                    class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full px-4 py-2 bg-[#FD8B51] hover:bg-[#CB6040] transition-colors rounded-lg font-medium flex items-center justify-center gap-2"
+                            >
+                                <i class="icon-send"></i>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-white/60 text-sm">
+                            © 2024 Marina Wild World. All rights reserved.
+                        </div>
+                        <div class="flex gap-6 text-sm">
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Privacy Policy</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Terms of Service</a
+                            >
+                            <a href="#" class="text-white/60 hover:text-white transition-colors"
+                                >Cookie Policy</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>
