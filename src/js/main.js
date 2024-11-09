@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize ScrollReveal
-    ScrollReveal().reveal('.animate-fade-in', {
-        duration: 1000,
-        distance: '50px',
-        origin: 'bottom',
-        easing: 'cubic-bezier(0.5, 0, 0, 1)',
-    });
-
-    // Mobile menu toggle
+    // Mobile navigation
     const menuBtn = document.querySelector('#menuBtn');
     const mobileNav = document.querySelector('#mobileNav');
     const closeBtn = document.querySelector('#closeMenuBtn');
@@ -29,18 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', closeMenu);
     menuOverLay.addEventListener('click', closeMenu);
 
-    // Close menu on link click
     const menuLinks = mobileNav.getElementsByTagName('a');
     Array.from(menuLinks).forEach((link) => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Close on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMenu();
     });
 
-    // Close menu on window resize
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
@@ -48,14 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth >= 768) closeMenu();
         }, 250);
     });
-});
 
-// Smooth scroll behavior
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
+    // Navigation links ( new page loader)
+    function navigateToPage(page) {
+        window.location.href = page + '.html';
+    }
+
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Add click event listener to each link
+    navLinks.forEach((link) => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            const page = this.getAttribute('href').replace('.html', '');
+            navigateToPage(page);
         });
     });
 });

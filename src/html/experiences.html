@@ -20,10 +20,6 @@
         <!-- Styles -->
         <link href="../css/output.css" rel="stylesheet" />
         <link href="../css/styles.css" rel="stylesheet" />
-
-        <!-- Scripts -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <script src="../js/main.js" defer></script>
     </head>
     <body class="bg-[#F2E5BF] overflow-x-hidden">
         <!-- Navigation -->
@@ -31,33 +27,33 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-24">
                     <!-- Logo -->
-                    <a href="home.html" class="flex items-center space-x-3">
+                    <a href="home" class="flex items-center space-x-3">
                         <span class="text-2xl font-bold text-white">Marina Wild World</span>
                     </a>
 
                     <div class="hidden md:flex space-x-8">
                         <a
-                            href="home.html"
+                            href="home"
                             class="text-white hover:text-[#FD8B51] transition-colors duration-300"
                             >Home</a
                         >
                         <a
-                            href="animals.html"
+                            href="animals"
                             class="text-white hover:text-[#FD8B51] transition-colors duration-300"
                             >Animals</a
                         >
                         <a
-                            href="visit.html"
+                            href="visit"
                             class="text-white hover:text-[#FD8B51] transition-colors duration-300"
                             >Visit</a
                         >
                         <a
-                            href="experiences.html"
-                            class="text-white hover:text-[#FD8B51] transition-colors duration-300"
+                            href="experiences"
+                            class="text-[#FD8B51] hover:text-[#FD8B51] transition-colors duration-300"
                             >Experiences</a
                         >
                         <a
-                            href="contact.html"
+                            href="contact"
                             class="text-white hover:text-[#FD8B51] transition-colors duration-300"
                             >Contact</a
                         >
@@ -85,7 +81,7 @@
                             <ul class="space-y-4">
                                 <li>
                                     <a
-                                        href="home.html"
+                                        href="home"
                                         class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
                                     >
                                         <i data-lucide="home" class="w-5 h-5"></i>
@@ -94,7 +90,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="animals.html"
+                                        href="animals"
                                         class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
                                     >
                                         <i data-lucide="paw-print" class="w-5 h-5"></i>
@@ -103,7 +99,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="visit.html"
+                                        href="visit"
                                         class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
                                     >
                                         <i data-lucide="map-pin" class="w-5 h-5"></i>
@@ -112,8 +108,8 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="experiences.html"
-                                        class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
+                                        href="experiences"
+                                        class="text-[#FD8B51] hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
                                     >
                                         <i data-lucide="sparkles" class="w-5 h-5"></i>
                                         Experiences
@@ -121,7 +117,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="contact.html"
+                                        href="contact"
                                         class="text-white hover:text-[#FD8B51] transition-colors duration-300 flex items-center gap-2"
                                     >
                                         <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -245,6 +241,83 @@
                             <p class="text-[#F2E5BF]/90">
                                 Help our keepers feed your favorite animals
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Showcase Section -->
+        <section class="container mx-auto px-4 py-8">
+            <!-- Welcome Video -->
+            <div class="bg-[#257180] rounded-lg overflow-hidden shadow-lg mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold text-[#F2E5BF] mb-4">Welcome to Our Zoo</h2>
+                        <p class="text-[#F2E5BF]/90 mb-6">
+                            Take a virtual tour of our facilities and get a glimpse of the amazing
+                            experiences that await you. Our zoo is home to over 200 species and
+                            features world-class exhibits designed for both animal welfare and
+                            visitor enjoyment.
+                        </p>
+                        <div class="flex gap-4">
+                            <span class="inline-flex items-center text-[#F2E5BF]/80">
+                                <i data-lucide="play-circle" class="w-5 h-5 mr-2"></i>
+                                Virtual Tour
+                            </span>
+                            <span class="inline-flex items-center text-[#F2E5BF]/80">
+                                <i data-lucide="eye" class="w-5 h-5 mr-2"></i>
+                                HD Quality
+                            </span>
+                        </div>
+                    </div>
+                    <div class="relative aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/3xWE-7WAK9s?si=kUduFvzOKu8SLSfr"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Behind the Scenes Video -->
+            <div class="bg-[#CB6040] rounded-lg overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                    <div class="relative aspect-video rounded-lg overflow-hidden lg:order-2">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/Gw-oGv9ZxVk?si=6exxW0n1lbFYu9-x"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <div class="flex flex-col justify-center lg:order-1">
+                        <h2 class="text-3xl font-bold text-[#F2E5BF] mb-4">
+                            Enjoy Your Picture-Perfect Holiday in Singapore
+                        </h2>
+                        <p class="text-[#F2E5BF]/90 mb-6">
+                            Get up-close with our wildlife and immerse yourself in an adventure at
+                            Singapore Zoo, River Wonders & Night Safari!
+                        </p>
+                        <div class="flex gap-4">
+                            <span class="inline-flex items-center text-[#F2E5BF]/80">
+                                <i data-lucide="play-circle" class="w-5 h-5 mr-2"></i>
+                                Exclusive Access
+                            </span>
+                            <span class="inline-flex items-center text-[#F2E5BF]/80">
+                                <i data-lucide="eye" class="w-5 h-5 mr-2"></i>
+                                HD Quality
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -426,22 +499,25 @@
                         <!-- Social Links -->
                         <div class="flex space-x-4">
                             <a
-                                href="#"
+                                href="https://www.facebook.com/MandaiWildlifeReserve"
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                                target="_blank"
                             >
                                 <i data-lucide="facebook"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/mandaiwildlifereserve/"
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                                target="_blank"
                             >
                                 <i data-lucide="instagram"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.youtube.com/c/MandaiWildlifeReserve"
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FD8B51] transition-colors"
+                                target="_blank"
                             >
-                                <i data-lucide="twitter"></i>
+                                <i data-lucide="youtube"></i>
                             </a>
                         </div>
                     </div>
@@ -520,6 +596,7 @@
                         <form class="space-y-3">
                             <div class="relative">
                                 <input
+                                    required
                                     type="email"
                                     placeholder="Your email address"
                                     class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-[#FD8B51] text-white placeholder:text-white/50"
@@ -558,6 +635,8 @@
             </div>
         </footer>
 
+        <!-- Scripts -->
+        <script src="../js/main.js" defer></script>
         <script src="https://unpkg.com/lucide@latest"></script>
         <script>
             lucide.createIcons();
